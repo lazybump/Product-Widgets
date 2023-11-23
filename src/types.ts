@@ -1,3 +1,5 @@
+export type ColorType = "white" | "black" | "blue" | "green" | "beige";
+
 export interface WidgetType {
   id: number;
   type: "carbon" | "plastic bottles" | "trees";
@@ -5,5 +7,5 @@ export interface WidgetType {
   action: "collects" | "plants" | "offsets";
   active: boolean;
   linked: boolean;
-  selectedColor: "white" | "black" | "blue" | "green" | "beige";
+  selectedColor: ColorType;
 }

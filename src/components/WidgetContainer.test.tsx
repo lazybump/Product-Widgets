@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import WidgetContainer from "./WidgetContainer";
-import dummyResponse from "../mocks/dummyResponse.json";
+import { dummyResponse } from "../mocks/dummyResponse";
 
 test("renders product widgets on page load", async () => {
   // All widgets
@@ -8,6 +8,6 @@ test("renders product widgets on page load", async () => {
   const widgets = await screen.findAllByRole("listitem");
   expect(widgets).toHaveLength(dummyResponse.length);
   // Individual widget
-  const carbonWidget = screen.getByText("carbon");
+  const carbonWidget = screen.getByText(/carbon/i);
   expect(carbonWidget).toBeInTheDocument();
 });

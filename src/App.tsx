@@ -2,7 +2,7 @@ import WidgetContainer from "./components/WidgetContainer";
 
 function App() {
   return (
-    <div>
+    <div className="min-h-screen flex justify-center items-center">
       <WidgetContainer />
     </div>
   );

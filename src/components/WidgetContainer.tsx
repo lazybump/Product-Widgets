@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { WidgetType } from "../types";
+import Widget from "./Widget";
 
 const WidgetContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -10,23 +11,32 @@ const WidgetContainer = () => {
     fetch("https://api.mocki.io/v2/016d11e8/product-widgets")
       .then((response) => response.json())
       .then((data) => {
-        setIsLoading(false);
         setWidgets(data);
+        setIsLoading(false);
       })
       .catch((error) => {
-        setIsLoading(false);
         setError(error);
+        setIsLoading(false);
       });
   }, []);
 
   return (
-    <ul>
+    <>
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      {widgets.map((widget) => (
-        <li key={widget.id}>{widget.type}</li>
-      ))}
-    </ul>
+      {!isLoading && !error && (
+        <main className="w-4/5 h-[697px] rounded-lg shadow-2xl p-5 flex flex-col">
+          <h1 className="pb-3 text-xl font-bold border-b-2 border-[#B0B0B0] text-center">
+            Per product widgets
+          </h1>
+          <ul className="my-6 grow flex flex-col justify-between">
+            {widgets.map((widget) => (
+              <Widget key={widget.id} {...widget} />
+            ))}
+          </ul>
+        </main>
+      )}
+    </>
   );
 };
 
