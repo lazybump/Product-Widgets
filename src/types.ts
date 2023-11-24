@@ -1,6 +1,6 @@
 export type ColorType = "white" | "black" | "blue" | "green" | "beige";
 
-export interface WidgetType {
+export interface WidgetObjType {
   id: number;
   type: "carbon" | "plastic bottles" | "trees";
   amount: number;
