@@ -10,3 +10,57 @@
   box-sizing: border-box;
   font-family: "Cabin";
 }
+
+/* Toggle styles */
+
+.toggle-label {
+  --width: 40px;
+  --height: calc(var(--width) / 2);
+  --border-radius: calc(var(--height) / 2);
+
+  display: inline-block;
+  cursor: pointer;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-input:checked + .toggle-fill {
+  background: theme("colors.green");
+  outline: 0.5px solid theme("colors.darkGray");
+}
+
+.toggle-fill {
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  outline: 0.5px solid theme("colors.lightGreen");
+  background: theme("colors.lightGray");
+  transition: background 0.2s;
+}
+
+.toggle-fill:hover::after {
+  outline: 4px solid theme("colors.lightGreen");
+}
+
+/* Toggle ball */
+.toggle-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--height);
+  width: var(--height);
+  background: white;
+  outline: 0.5px solid theme("colors.beige");
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s;
+}
+
+.toggle-input:checked + .toggle-fill::after {
+  transform: translateX(var(--height));
+  outline: 0.5px solid theme("colors.green");
+}

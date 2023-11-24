@@ -4,15 +4,15 @@ interface LogoType {
   selectedColor: ColorType;
 }
 
-const Logo = ({ selectedColor }: LogoType) => {
-  const colorThemes = {
-    green: "bg-green fill-white",
-    black: "bg-black fill-white",
-    blue: "bg-blue fill-white",
-    white: "bg-white fill-green",
-    beige: "bg-beige fill-green",
-  };
+const colorThemes = {
+  green: "bg-green fill-white",
+  black: "bg-black fill-white",
+  blue: "bg-blue fill-white",
+  white: "bg-white fill-green",
+  beige: "bg-beige fill-green",
+};
 
+const Logo = ({ selectedColor }: LogoType) => {
   const theme = colorThemes[selectedColor];
 
   return (

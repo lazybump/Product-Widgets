@@ -1,7 +1,15 @@
+import { useState } from "react";
 import { WidgetType } from "../types";
 import Logo from "./Logo";
+import Switch from "./Switch";
 
-const Widget = ({ type, selectedColor, action, amount }: WidgetType) => {
+const Widget = ({ id, type, selectedColor, action, amount }: WidgetType) => {
+  const [selectedRadio, setSelectedRadio] = useState<string>(selectedColor);
+
+  const handleOptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedRadio(e.target.value);
+  };
+
   const colorThemes = {
     green: "bg-green text-white",
     black: "bg-black text-white",
@@ -9,7 +17,6 @@ const Widget = ({ type, selectedColor, action, amount }: WidgetType) => {
     white: "bg-white text-green",
     beige: "bg-beige text-green",
   };
-
   const theme = colorThemes[selectedColor];
 
   return (
@@ -17,7 +24,6 @@ const Widget = ({ type, selectedColor, action, amount }: WidgetType) => {
       <header className={`${theme} rounded-md flex p-3`}>
         <figure className="mr-3">
           <Logo selectedColor={selectedColor} />
-          <figcaption></figcaption>
         </figure>
         <div className="flex flex-col justify-between">
           <p className="text-xs">This product {action}</p>
@@ -28,23 +34,38 @@ const Widget = ({ type, selectedColor, action, amount }: WidgetType) => {
         </div>
       </header>
       {/* Interactive part */}
-      <section>
-        <div className="flex justify-between">
+      <section className="text-green pt-1 space-y-2">
+        <div className="flex justify-between items-center">
           <span>Link to Public Profile</span>
           <input type="checkbox" />
         </div>
-        <div className="flex justify-between">
-          <span>Badge color</span>
-          <div className="space-x-1">
-            <input type="checkbox" />
-            <input type="checkbox" />
-            <input type="checkbox" />
-            <input type="checkbox" />
-            <input type="checkbox" />
+        <div className="flex justify-between items-center">
+          <span>Badge colour</span>
+          <div className=" space-x-1.5 flex">
+            {["blue", "green", "beige", "white", "black"].map(
+              (color, index) => (
+                <div key={index} className="flex">
+                  <input
+                    type="radio"
+                    name={type}
+                    id={`${type}-radio-${color}`}
+                    checked={selectedRadio === color}
+                    value={color}
+                    onChange={handleOptionChange}
+                    className="hidden peer"
+                  />
+                  <label
+                    htmlFor={`${type}-radio-${color}`}
+                    className={`bg-${color} w-4 h-4 cursor-pointer hover:opacity-80 peer-checked:border-2 peer-checked:border-darkGray`}
+                  ></label>
+                </div>
+              )
+            )}
           </div>
         </div>
-        <div>
+        <div className="flex justify-between items-center">
           <span>Activate badge</span>
+          <Switch id={id} />
         </div>
       </section>
     </li>
