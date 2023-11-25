@@ -28,11 +28,11 @@ const WidgetContainer = () => {
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {!isLoading && !error && (
-        <main className="w-4/5 h-[697px] rounded-lg shadow-2xl p-5 flex flex-col">
-          <h1 className="pb-2 text-2xl font-bold border-b-2 border-mediumGray text-center">
+        <main className="w-[331px] h-[697px] rounded-lg p-9 bg-white shadow-2xl flex flex-col lg:w-[851px] lg:h-[419px]">
+          <h3 className="font-bold text-3xl text-center pb-3 border-b-2 border-mediumGray lg:text-start">
             Per product widgets
-          </h1>
-          <ul className="my-6 grow flex flex-col justify-between">
+          </h3>
+          <ul className="mt-5 px-5 grow flex flex-col justify-between lg:flex-row lg:p-0 lg:grow-0 lg:h-44">
             {widgets.map((widget) => (
               <Widget
                 key={widget.id}

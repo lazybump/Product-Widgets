@@ -22,7 +22,7 @@ const Tooltip = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <IoMdInformationCircleOutline className="text-sm" />
+      <IoMdInformationCircleOutline className="w-3 h-3" />
       <div
         className={`absolute -top-0 -translate-x-1/2 -translate-y-full w-44 bg-white shadow-2xl rounded-lg p-4 text-[9px] text-center transition-all duration-300 ${
           isTooltipOpen

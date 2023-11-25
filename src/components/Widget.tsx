@@ -45,24 +45,24 @@ const Widget = ({
   const theme = colorThemes[selectedColor];
 
   return (
-    <li className="space-y-2">
-      <header className={`${theme} rounded-md flex p-3`}>
+    <li className="pb-9 h-40 lg:h-full lg:pb-0">
+      <header className={`${theme} rounded-md flex h-16 items-center px-2`}>
         <figure className="mr-3">
           <Logo selectedColor={selectedColor} />
         </figure>
-        <div className="flex flex-col justify-between">
-          <p className="text-xs">This product {action}</p>
-          <p className="font-bold">
+        <div className="flex flex-col justify-between w-36 h-10">
+          <p className="h-4 text-xs">This product {action}</p>
+          <p className="font-bold overflow-hidden">
             {amount}
             {type === "carbon" && "kgs of"} {type}
           </p>
         </div>
       </header>
       {/* Interactive part */}
-      <section className="text-green pt-1 space-y-2">
-        <div className="flex justify-between items-center">
-          <div className="flex space-x-1">
-            <h3>Link to Public Profile</h3>
+      <section className="text-green grid gap-2.5 pt-2">
+        <div className="h-6 flex justify-between items-center">
+          <div className="flex w-40 h-5">
+            <p className="text-sm text-center">Link to Public Profile</p>
             <Tooltip />
           </div>
           <div className="flex">
@@ -77,11 +77,7 @@ const Widget = ({
               htmlFor={`link-${id}`}
               className="w-4 h-4 border-2 border-darkGray rounded-sm cursor-pointer hover:bg-lightGreen relative group transition-all duration-150 peer-checked:bg-green peer-checked:border-green"
             >
-              <span
-                className={`w-8 h-8 bg-lightGreen rounded-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ${
-                  isLinkChecked ? "" : ""
-                }`}
-              ></span>
+              <span className="w-8 h-8 bg-lightGreen rounded-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-150"></span>
               <FaCheck
                 className={`text-white absolute w-full h-full transition-all duration-150 ${
                   isLinkChecked ? "opacity-100" : "opacity-0"
@@ -91,8 +87,8 @@ const Widget = ({
           </div>
         </div>
         <div className="flex justify-between items-center">
-          <h3>Badge colour</h3>
-          <div className=" space-x-1.5 flex">
+          <p className="h-4 flex items-center w-24 text-sm">Badge colour</p>
+          <div className="flex justify-between w-24 h-4">
             {["blue", "green", "beige", "white", "black"].map(
               (color, index) => (
                 <div key={index} className="flex">
@@ -107,7 +103,7 @@ const Widget = ({
                   />
                   <label
                     htmlFor={`radio-${id}-${color}`}
-                    className={`bg-${color} w-4 h-4 cursor-pointer hover:opacity-80 peer-checked:border-2 peer-checked:border-mediumGray`}
+                    className={`bg-${color} w-4 cursor-pointer hover:opacity-80 peer-checked:border-2 peer-checked:border-mediumGray peer-checked:shadow-md`}
                   ></label>
                 </div>
               )
@@ -115,7 +111,7 @@ const Widget = ({
           </div>
         </div>
         <div className="flex justify-between items-center">
-          <h3>Activate badge</h3>
+          <h3 className="text-sm">Activate badge</h3>
           <label htmlFor={`toggle-${id}`} className="toggle-label">
             <input
               type="checkbox"
