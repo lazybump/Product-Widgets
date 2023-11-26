@@ -43,7 +43,7 @@ const Widget = ({
   return (
     <li className="pb-9 h-40 lg:h-full lg:pb-0">
       <header
-        className={`${theme} rounded-md flex h-16 items-center px-2 transition-colors duration-300`}
+        className={`${theme} rounded-md flex h-16 shadow-md items-center px-2 transition-colors duration-300`}
       >
         <figure className="mr-3">
           <Logo selectedRadio={selectedRadio} />

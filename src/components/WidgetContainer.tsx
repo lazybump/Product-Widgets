@@ -28,7 +28,7 @@ const WidgetContainer = () => {
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {!isLoading && !error && (
-        <main className="w-[331px] h-[697px] rounded-lg p-9 bg-white shadow-2xl flex flex-col lg:w-[851px] lg:h-[419px]">
+        <main className="w-[331px] h-[697px] rounded-lg p-9 bg-[#f9f9f9] shadow-2xl flex flex-col lg:w-[851px] lg:h-[419px]">
           <h3 className="font-bold text-3xl text-center pb-3 border-b-2 border-mediumGray lg:text-start">
             Per product widgets
           </h3>
