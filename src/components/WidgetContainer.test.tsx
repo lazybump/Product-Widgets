@@ -21,7 +21,7 @@ test("activating a widget deactivates other widgets", async () => {
     selector: '[id^="toggle-"]',
   });
 
-  expect(toggle1).toBeChecked();
+  expect(toggle1).not.toBeChecked();
   expect(toggle2).not.toBeChecked();
   expect(toggle3).not.toBeChecked();
 

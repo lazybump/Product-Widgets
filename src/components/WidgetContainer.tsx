@@ -6,7 +6,7 @@ const WidgetContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [widgets, setWidgets] = useState<WidgetObjType[]>([]);
   const [error, setError] = useState("");
-  const [activeWidgetId, setActiveWidgetId] = useState<number>(1);
+  const [activeWidgetId, setActiveWidgetId] = useState<number | null>(null);
 
   useEffect(() => {
     fetch("https://api.mocki.io/v2/016d11e8/product-widgets")

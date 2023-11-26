@@ -5,8 +5,8 @@ import { FaCheck } from "react-icons/fa6";
 import Tooltip from "./Tooltip";
 
 interface WidgetProps extends WidgetObjType {
-  activeWidgetId: number;
-  setActiveWidgetId: React.Dispatch<React.SetStateAction<number>>;
+  activeWidgetId: number | null;
+  setActiveWidgetId: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
 const Widget = ({
@@ -26,13 +26,7 @@ const Widget = ({
   };
 
   const handleToggle = () => {
-    setActiveWidgetId((prev) => {
-      if (prev) {
-        return id;
-      } else {
-        return 0;
-      }
-    });
+    setActiveWidgetId((prev) => (prev === id ? null : id));
   };
 
   const colorThemes = {
