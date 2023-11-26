@@ -1,7 +1,7 @@
 import { ColorType } from "../types";
 
 interface LogoType {
-  selectedColor: ColorType;
+  selectedRadio: ColorType;
 }
 
 const colorThemes = {
@@ -12,8 +12,8 @@ const colorThemes = {
   beige: "bg-beige fill-green",
 };
 
-const Logo = ({ selectedColor }: LogoType) => {
-  const theme = colorThemes[selectedColor];
+const Logo = ({ selectedRadio }: LogoType) => {
+  const theme = colorThemes[selectedRadio];
 
   return (
     <svg
@@ -22,7 +22,7 @@ const Logo = ({ selectedColor }: LogoType) => {
       viewBox="0 0 41 46"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`${theme}`}
+      className={`${theme} transition-colors duration-300`}
     >
       <path
         fillRule="evenodd"

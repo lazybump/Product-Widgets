@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { WidgetObjType } from "../types";
+import { ColorType, WidgetObjType } from "../types";
 import Logo from "./Logo";
 import { FaCheck } from "react-icons/fa6";
 import Tooltip from "./Tooltip";
@@ -19,12 +19,14 @@ const Widget = ({
   setActiveWidgetId,
 }: WidgetProps) => {
   const [isLinkChecked, setIsLinkChecked] = useState(false);
-  const [selectedRadio, setSelectedRadio] = useState<string>(selectedColor);
+  const [selectedRadio, setSelectedRadio] = useState(selectedColor);
 
+  // To change widget theme colour
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedRadio(e.target.value);
+    setSelectedRadio(e.target.value as ColorType);
   };
 
+  // For the widget activation
   const handleToggle = () => {
     setActiveWidgetId((prev) => (prev === id ? null : id));
   };
@@ -36,13 +38,15 @@ const Widget = ({
     white: "bg-white text-green",
     beige: "bg-beige text-green",
   };
-  const theme = colorThemes[selectedColor];
+  const theme = colorThemes[selectedRadio];
 
   return (
     <li className="pb-9 h-40 lg:h-full lg:pb-0">
-      <header className={`${theme} rounded-md flex h-16 items-center px-2`}>
+      <header
+        className={`${theme} rounded-md flex h-16 items-center px-2 transition-colors duration-300`}
+      >
         <figure className="mr-3">
-          <Logo selectedColor={selectedColor} />
+          <Logo selectedRadio={selectedRadio} />
         </figure>
         <div className="flex flex-col justify-between w-36 h-10">
           <p className="h-4 text-xs">This product {action}</p>
