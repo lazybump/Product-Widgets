@@ -109,7 +109,7 @@ const Widget = ({
           </div>
         </div>
         <div className="flex justify-between items-center">
-          <h3 className="text-sm">Activate badge</h3>
+          <p className="h-4 flex items-center w-24 text-sm">Activate badge</p>
           <label htmlFor={`toggle-${id}`} className="toggle-label">
             <input
               type="checkbox"
@@ -118,7 +118,11 @@ const Widget = ({
               checked={id === activeWidgetId}
               onChange={handleToggle}
             />
-            <div className="toggle-fill"></div>
+            <div
+              className="toggle-fill"
+              data-testid="toggle-fill"
+              aria-hidden
+            ></div>
           </label>
         </div>
       </section>
