@@ -60,3 +60,4 @@ describe("WidgetContainer component", () => {
     expect(toggle3).toBeChecked();
   });
 });
+

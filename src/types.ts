@@ -9,3 +9,4 @@ export interface WidgetObjType {
   linked: boolean;
   selectedColor: ColorType;
 }
+

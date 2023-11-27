@@ -29,3 +29,4 @@ export const dummyResponse: WidgetObjType[] = [
     selectedColor: "blue",
   },
 ];
+

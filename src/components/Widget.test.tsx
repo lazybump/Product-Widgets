@@ -38,3 +38,4 @@ describe("Widget component", () => {
     expect(toggleInput).toBeChecked();
   });
 });
+

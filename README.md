@@ -76,3 +76,4 @@ I faced a problem trying to style the widget headers dynamically using the bg-[c
 The solution I found was to just create an object lookup for the styles assosciated with each different badge colour.
 
 The scores on lighthouse were pretty good, i.e all in the green, apart from SEO so I included an extra meta tag in the index.html file to describe the page's content a bit more. Made a few more adjustments which resulted in perfect scores for performance, SEO, accessibility, and best practices.
+

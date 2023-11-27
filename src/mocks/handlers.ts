@@ -6,3 +6,4 @@ export const handlers = [
     return HttpResponse.json(dummyResponse);
   }),
 ];
+
