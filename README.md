@@ -59,13 +59,17 @@ This project was scaffolded with Vite and uses the following tools:
 
 For state management, the useState hook was sufficient as props only needed to be sent a couple levels deep. No need for context or redux.
 
-Chose to set the project up with Vite as it's a much faster and better development experience than using create-react-app. Used TypeScript for type safety - pretty standard
+Chose to set the project up with Vite to provide me with a much faster and better development experience than using create-react-app. Used TypeScript for type safety - pretty standard
 
 For styling, Tailwind was the main tool as I find it helps style a site quickly but I did have to use vanilla CSS for the more advanced styles like the toggle switch and animations. Built for mobile first, and made it responsive to larger screens
 
 For testing, I followed TDD and iterated on it as I went along to ensure code was simple and effective
 
+Included linting to make sure I'm following a consistent coding standard
+
 **Challenges Faced:**
 
 I faced a problem trying to style the widget headers dynamically using the bg-[color] utility class like so: `bg-${selectedColor}`
 The solution I found was to just create an object lookup for the styles assosciated with each different badge colour.
+
+The scores on lighthouse were pretty good, i.e all in the green, apart from SEO so I included an extra meta tag in the index.html file to describe the page's content a bit more. Made a few more adjustments which resulted in perfect scores for performance, SEO, accessibility, and best practices.
