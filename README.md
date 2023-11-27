@@ -18,7 +18,8 @@ Users can do the following:
 
 ## Pre-requisites
 
-- Node.js and npm installed
+- Node.js
+- npm
 
 ## Getting started
 
