@@ -1,30 +1,71 @@
-# React + TypeScript + Vite
+# Product Widgets
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## A fully functional front-end service written with React to build interactive product widgets
 
-Currently, two official plugins are available:
+This project displays several widgets on a page, each representing a different product for a given user. These widgets are interactive and allow users change their settings as well as update their profile
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Users can do the following:
 
-## Expanding the ESLint configuration
+- Activate a widget
+- Select widget theme colour
+- Link a widget to their public profile
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<br>
 
-- Configure the top-level `parserOptions` property like this:
+![Project screenshot](./src/assets/projectScreenshot.jpg)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+<br>
+
+## Pre-requisites
+
+- Node.js and npm installed
+
+## Getting started
+
+1. Clone this project
+
+```
+git clone [repo path]
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Install dependencies
+
+```
+npm install
+```
+
+3. Run the app
+
+```
+npm run dev
+```
+
+## Tools
+
+This project was scaffolded with Vite and uses the following tools:
+
+- React
+- TypeScript
+- Tailwind
+- React Icons
+- Mock Service Worker (msw)
+- Vitest
+- React Testing Library
+- ESLint
+
+## Considerations
+
+**Architectural Decisions:**
+
+For state management, the useState hook was sufficient as props only needed to be sent a couple levels deep. No need for context or redux.
+
+Chose to set the project up with Vite as it's a much faster and better development experience than using create-react-app. Used TypeScript for type safety - pretty standard
+
+For styling, Tailwind was the main tool as I find it helps style a site quickly but I did have to use vanilla CSS for the more advanced styles like the toggle switch and animations. Built for mobile first, and made it responsive to larger screens
+
+For testing, I followed TDD and iterated on it as I went along to ensure code was simple and effective
+
+**Challenges Faced:**
+
+I faced a problem trying to style the widget headers dynamically using the bg-[color] utility class like so: `bg-${selectedColor}`
+The solution I found was to just create an object lookup for the styles assosciated with each different badge colour.
