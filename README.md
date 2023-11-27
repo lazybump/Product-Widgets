@@ -12,7 +12,7 @@ Users can do the following:
 
 <br>
 
-![Project screenshot](./src/assets/projectScreenshot.jpg)
+![Project screenshot](./projectScreenshot.jpg)
 
 <br>
 
