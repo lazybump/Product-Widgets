@@ -57,11 +57,13 @@ This project was scaffolded with Vite and uses the following tools:
 
 **Architectural Decisions:**
 
-For state management, the useState hook was sufficient as props only needed to be sent a couple levels deep. No need for context or redux.
-
 Chose to set the project up with Vite to provide me with a much faster and better development experience than using create-react-app. Used TypeScript for type safety - pretty standard
 
 For styling, Tailwind was the main tool as I find it helps style a site quickly but I did have to use vanilla CSS for the more advanced styles like the toggle switch and animations. Built for mobile first, and made it responsive to larger screens
+
+Decided to mock the API response for testing using msw as it's best practice especially in a real world application where calls to an API could be costly. Also good to avoid rate-limiting
+
+For state management, the useState hook was sufficient as props only needed to be sent a couple levels deep. No need for context or redux.
 
 For testing, I followed TDD and iterated on it as I went along to ensure code was simple and effective
 
