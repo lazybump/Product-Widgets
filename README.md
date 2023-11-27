@@ -12,7 +12,7 @@ Users can do the following:
 
 <br>
 
-![Project screenshot](/public/projectScreenshot.jpg)
+![Project screenshot](https://github.com/lazybump/Product-Widgets/assets/104283344/5346347b-550e-4345-a14f-9b29411dfe49)
 
 <br>
 
