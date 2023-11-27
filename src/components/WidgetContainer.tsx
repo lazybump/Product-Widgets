@@ -21,8 +21,6 @@ const WidgetContainer = () => {
       });
   }, []);
 
-  // const;
-
   return (
     <>
       {isLoading && <p>Loading...</p>}
