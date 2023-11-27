@@ -1,6 +1,6 @@
-import { WidgetType } from "../types";
+import { WidgetObjType } from "../types";
 
-export const dummyResponse: WidgetType[] = [
+export const dummyResponse: WidgetObjType[] = [
   {
     id: 1,
     type: "plastic bottles",
