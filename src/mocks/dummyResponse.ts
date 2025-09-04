@@ -30,3 +30,11 @@ export const dummyResponse: WidgetObjType[] = [
   },
 ];
 
+// Simulates an API call with a delay
+export const fetchWidgets = (): Promise<WidgetObjType[]> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(dummyResponse);
+    }, 500); // 500ms delay to mimic network
+  });
+};

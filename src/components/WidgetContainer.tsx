@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { WidgetObjType } from "../types";
 import Widget from "./Widget";
+import { fetchWidgets } from "../mocks/dummyResponse";
 
 const WidgetContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -9,8 +10,9 @@ const WidgetContainer = () => {
   const [activeWidgetId, setActiveWidgetId] = useState<number | null>(null);
 
   useEffect(() => {
-    fetch("https://api.mocki.io/v2/016d11e8/product-widgets")
-      .then((response) => response.json())
+    // fetch("https://api.mocki.io/v2/016d11e8/product-widgets")
+    // .then((response) => response.json())
+    fetchWidgets()
       .then((data) => {
         setWidgets(data);
         setIsLoading(false);
@@ -47,4 +49,3 @@ const WidgetContainer = () => {
 };
 
 export default WidgetContainer;
-
